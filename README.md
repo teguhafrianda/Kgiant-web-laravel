@@ -62,16 +62,3 @@ php artisan migrate --seed
 
 # Jalankan server
 php artisan serve
-
-
----
-
-### ✅ Langkah Selanjutnya
-Kalau kamu ingin, saya bisa bantu juga:
-- Buatkan versi GitHub `repository`-nya siap di-*push*
-- Tambahkan `screenshots/` agar tampil di GitHub
-- Tambahkan badge GitHub Actions (CI), dsb.
-
-Tinggal bilang: **"Lanjut buat repositori GitHub-nya"**
-atau **"Buatkan juga README untuk SIAKAD dan Haircut"** ya!
-```
