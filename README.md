@@ -75,3 +75,5 @@ Kalau kamu ingin, saya bisa bantu juga:
 Tinggal bilang: **"Lanjut buat repositori GitHub-nya"**
 atau **"Buatkan juga README untuk SIAKAD dan Haircut"** ya!
 ```
+
+echo "trigger deploy"
