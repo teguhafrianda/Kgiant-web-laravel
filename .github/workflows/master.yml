@@ -1,4 +1,5 @@
-name: Kasir Deploy V1
+name: 🚀 Kasir Deploy V1
+
 on:
   push:
     branches: [main]
@@ -18,21 +19,37 @@ on:
       - "artisan"
       - "composer.json"
       - "composer.lock"
-      - "composer.lock"
       - "package.json"
       - "phpunit.xml"
       - "README.md"
       - "vite.config.js"
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      # Here is the deployment action
-      - name: Upload from laravel kasir
+      - name: 📥 Checkout Project
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Install Dependencies for Production
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: 🚀 Upload Laravel Project via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           remote_dir: "/domains/quantummute.com/public_html"
+          local_dir: "."
+          exclude: |
+            .git*
+            node_modules/
+            tests/
+            .env
+            .github/
+            vite.config.js
+            package.json
+            package-lock.json
+            phpunit.xml
