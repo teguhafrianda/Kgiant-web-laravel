@@ -1,21 +1,15 @@
 <?php
 
-namespace Database\Seeders;
-
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
+
 
 class CategoriesTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    // Contoh CategoriesTableSeeder
     public function run()
     {
-        \App\Models\Categories::create(['name' => 'Food', 'type' => 'food']);
-        \App\Models\Categories::create(['name' => 'Drink', 'type' => 'drink']);
-        \App\Models\Categories::create(['name' => 'Playground', 'type' => 'playground']);
+        Category::create(['name' => 'Food', 'type' => 'food']);
+        Category::create(['name' => 'Drink', 'type' => 'drink']);
+        Category::create(['name' => 'Playground', 'type' => 'playground']);
     }
-
 }
