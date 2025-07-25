@@ -27,6 +27,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: 📥 Checkout Project
@@ -42,3 +43,11 @@ jobs:
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           remote_dir: "domains/kasir.quantummute.com/public_html"
+          exclude: |
+            vendor
+            node_modules
+            storage
+            .git
+            .env
+            tests
+            phpunit.xml
