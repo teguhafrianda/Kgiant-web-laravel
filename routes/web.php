@@ -32,5 +32,5 @@ Route::middleware('auth')->group(function () {
 });
 
 // Menyediakan route autentikasi default dari Laravel Breeze
-// test deploy
+// Deploy
 require __DIR__.'/auth.php';
