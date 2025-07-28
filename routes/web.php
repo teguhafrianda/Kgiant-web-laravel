@@ -32,5 +32,5 @@ Route::get('/', function () {
     Route::delete('/orders/{id}', [OrdersController::class, 'destroy'])->name('orders.destroy');
 // });
 
-// autentikasi Laravel Breeze
+// Laravel Breeze
 // require __DIR__.'/auth.php';
