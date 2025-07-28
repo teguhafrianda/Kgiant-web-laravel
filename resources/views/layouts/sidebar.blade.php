@@ -5,7 +5,6 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title" data-key="t-menu">Menu</li>
 
-                <!-- Semua Role Bisa Akses Dashboard -->
                 <li>
                     <a href="{{ route('dashboard.index') }}">
                         <i data-feather="home"></i>
@@ -13,8 +12,6 @@
                     </a>
                 </li>
 
-                <!-- Admin Only -->
-                @if(auth()->user()->role === 'admin')
                     <li>
                         <a href="{{ route('category.index') }}">
                             <i data-feather="file-text"></i>
@@ -35,10 +32,8 @@
                             <span data-key="t-settings">Settings</span>
                         </a>
                     </li>
-                @endif
 
                 <!-- Kasir & Admin Bisa Akses Orders, Customers, Reports -->
-                @if(auth()->user()->role === 'kasir' || auth()->user()->role === 'admin')
                     <li>
                         <a href="{{ route('orders.index') }}">
                             <i data-feather="shopping-cart"></i>
@@ -59,7 +54,6 @@
                             <span data-key="t-reports">Reports</span>
                         </a>
                     </li>
-                @endif
             </ul>
         </div>
     </div>

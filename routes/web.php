@@ -9,13 +9,14 @@ use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\SettingsController;
 
-// Redirect ke login jika belum login
+// Redirect ke login jika belum login (kalau tidak pakai auth, ini bisa diubah juga)
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('dashboard.index'); // Ubah ke dashboard atau halaman utama langsung
 });
 
 // Group Middleware untuk autentikasi
-Route::middleware('auth')->group(function () {
+// Jika tidak pakai auth, middleware ini juga harus dihapus
+// Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::resource('category', CategoryController::class);
     Route::resource('product', ProductController::class);
@@ -29,8 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/orders/remove-from-cart/{id}', [OrdersController::class, 'removeFromCart'])->name('cart.remove');
     Route::post('/orders/store', [OrdersController::class, 'store'])->name('orders.store');
     Route::delete('/orders/{id}', [OrdersController::class, 'destroy'])->name('orders.destroy');
-});
+// });
 
-// Menyediakan route autentikasi default dari Laravel Breeze
-// Deploy
-require __DIR__.'/auth.php';
+// Hapus autentikasi Laravel Breeze
+// require __DIR__.'/auth.php';

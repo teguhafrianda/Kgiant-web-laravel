@@ -79,7 +79,5 @@
 
         </div>
         <!-- END layout-wrapper -->
-
-        
         
         @endsection
