@@ -1,25 +1,37 @@
-/.phpunit.cache
-/node_modules
-/public/template
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/storage/pail
+# Laravel & Composer
 /vendor/
-/public/template/
-.env
+/.env
 .env.backup
 .env.production
+
+# Cache & Build
+/.phpunit.cache
+/.phpunit.result.cache
 .phpactor.json
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# Node
+/node_modules/
+
+# Public folder (builds, template, hot reload, etc)
+/public/build/
+/public/hot
+/public/storage/
+/public/template/
+
+# Storage (keys, logs, temp)
+/storage/*.key
+/storage/pail/
+
+# Homestead & Local dev files
+Homestead.json
+Homestead.yaml
 /auth.json
-/.fleet
-/.idea
-/.nova
-/.vscode
-/.zed
+
+# IDEs & Editors
+/.idea/
+/.vscode/
+/.zed/
+/.fleet/
+/.nova/
